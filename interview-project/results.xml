@@ -1,0 +1,36 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="11.555535000000004">
+<testsuite name="scripts/discover.spec.ts" timestamp="2026-03-17T13:24:19.746Z" hostname="chromium" tests="1" failures="0" skipped="0" time="9.023" errors="0">
+<testcase name="Verify the Discover feature › Verify the filtering option: {
+  &quot;type&quot;: &quot;TV Shows&quot;,
+  &quot;genre&quot;: [
+    &quot;Comedy&quot;,
+    &quot;Drama&quot;
+  ],
+  &quot;yearFrom&quot;: &quot;1901&quot;,
+  &quot;yearTo&quot;: &quot;2024&quot;,
+  &quot;rating&quot;: 4,
+  &quot;expect&quot;: {
+    &quot;numberOfReturnMoviesOnTheFirstPage&quot;: 20
+  }
+}" classname="scripts/discover.spec.ts" time="9.023">
+<system-out>
+<![CDATA[[INFO][03-17-2026 20:24:26]: 	Starting filter movie with the criteria: {
+  "type": "TV Shows",
+  "genre": [
+    "Comedy",
+    "Drama"
+  ],
+  "yearFrom": "1901",
+  "yearTo": "2024",
+  "rating": 4,
+  "expect": {
+    "numberOfReturnMoviesOnTheFirstPage": 20
+  }
+}
+
+[[ATTACHMENT|test-results/scripts-discover-Verify-th-50791-urnMoviesOnTheFirstPage-20--chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
