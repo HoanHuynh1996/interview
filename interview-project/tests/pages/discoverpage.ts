@@ -67,18 +67,20 @@ export class DiscoverPage {
             }
         );
         //wait for the page loaded
-        await this.page.waitForLoadState("load");
+        await this.page.waitForLoadState("networkidle");
 
     }
 
     public async selectCategory(name: string) {
         logger.info("selecting category:" + name)
         await this.page.locator(this.locatorCategory(name)).click();
+        await this.page.waitForLoadState("networkidle");
     }
 
     public async searchMovie(name: string) {
         logger.info("searching movie name:" + name)
         await this.page.locator(this.input_search).fill(name);
+        await this.page.waitForLoadState("networkidle")
     }
 
     public async pagination(type?: string) {

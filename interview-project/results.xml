@@ -1,6 +1,161 @@
-<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="10.561177000000002">
-<testsuite name="scripts/discover.spec.ts" timestamp="2026-03-18T04:37:04.148Z" hostname="chromium" tests="1" failures="1" skipped="0" time="7.985" errors="0">
-<testcase name="Verify the Discover feature › Verify that FE send correct data on their API based on selected filters and its data reponse returned correctly" classname="scripts/discover.spec.ts" time="7.985">
+<testsuites id="" name="" tests="10" failures="2" skipped="0" errors="0" time="32.915592000000004">
+<testsuite name="scripts/discover.spec.ts" timestamp="2026-03-18T05:05:45.894Z" hostname="chromium" tests="10" failures="2" skipped="0" time="131.947" errors="0">
+<testcase name="Verify the Discover feature › Verify the filtering feature: {
+  &quot;type&quot;: &quot;TV Shows&quot;,
+  &quot;genre&quot;: [
+    &quot;Comedy&quot;,
+    &quot;Drama&quot;
+  ],
+  &quot;yearFrom&quot;: &quot;1901&quot;,
+  &quot;yearTo&quot;: &quot;2024&quot;,
+  &quot;rating&quot;: 4,
+  &quot;expect&quot;: {
+    &quot;numberOfReturnMoviesOnTheFirstPage&quot;: 20
+  }
+}" classname="scripts/discover.spec.ts" time="17.11">
+<system-out>
+<![CDATA[[INFO][03-18-2026 12:06:01]: 	Starting filter movie with the criteria: {
+  "type": "TV Shows",
+  "genre": [
+    "Comedy",
+    "Drama"
+  ],
+  "yearFrom": "1901",
+  "yearTo": "2024",
+  "rating": 4,
+  "expect": {
+    "numberOfReturnMoviesOnTheFirstPage": 20
+  }
+}
+]]>
+</system-out>
+</testcase>
+<testcase name="Verify the Discover feature › Verify the filtering feature: {
+  &quot;type&quot;: &quot;Movie&quot;,
+  &quot;genre&quot;: [
+    &quot;Crime&quot;
+  ],
+  &quot;yearFrom&quot;: &quot;1902&quot;,
+  &quot;yearTo&quot;: &quot;2023&quot;,
+  &quot;rating&quot;: 1,
+  &quot;expect&quot;: {
+    &quot;numberOfReturnMoviesOnTheFirstPage&quot;: 20
+  }
+}" classname="scripts/discover.spec.ts" time="15.209">
+<system-out>
+<![CDATA[[INFO][03-18-2026 12:05:58]: 	Starting filter movie with the criteria: {
+  "type": "Movie",
+  "genre": [
+    "Crime"
+  ],
+  "yearFrom": "1902",
+  "yearTo": "2023",
+  "rating": 1,
+  "expect": {
+    "numberOfReturnMoviesOnTheFirstPage": 20
+  }
+}
+]]>
+</system-out>
+</testcase>
+<testcase name="Verify the Discover feature › Verify the category feature" classname="scripts/discover.spec.ts" time="14.23">
+<system-out>
+<![CDATA[[INFO][03-18-2026 12:05:58]: 	selecting category:Trend
+]]>
+</system-out>
+</testcase>
+<testcase name="Verify the Discover feature › Verify the search feature" classname="scripts/discover.spec.ts" time="13.228">
+<system-out>
+<![CDATA[[INFO][03-18-2026 12:05:58]: 	searching movie name:The Great Texas Dynamite Chase
+]]>
+</system-out>
+</testcase>
+<testcase name="Verify the Discover feature › Verify the combination of category, search, filter feature" classname="scripts/discover.spec.ts" time="15.625">
+<system-out>
+<![CDATA[[INFO][03-18-2026 12:05:57]: 	selecting category:Trend
+[INFO][03-18-2026 12:06:00]: 	searching movie name:Uncle Grandpa
+[INFO][03-18-2026 12:06:00]: 	Starting filter movie with the criteria: {
+  "type": "TV Shows",
+  "genre": [
+    "Comedy"
+  ],
+  "yearFrom": "1990",
+  "yearTo": "2025",
+  "rating": 5,
+  "search": "Uncle Grandpa",
+  "category": "Trend",
+  "expect": {
+    "numberOfReturnMoviesOnTheFirstPage": 2
+  }
+}
+]]>
+</system-out>
+</testcase>
+<testcase name="Verify the Discover feature › Verify the pagination feature" classname="scripts/discover.spec.ts" time="12.972">
+<failure message="discover.spec.ts:88:9 Verify the pagination feature" type="FAILURE">
+<![CDATA[  [chromium] › scripts/discover.spec.ts:88:9 › Verify the Discover feature › Verify the pagination feature 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('//*[contains(@class,\'overflow-scroll\')]/div/div')
+    Expected: 20
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" with timeout 5000ms
+      - waiting for locator('//*[contains(@class,\'overflow-scroll\')]/div/div')
+        9 × locator resolved to 0 elements
+          - unexpected value "0"
+
+
+       at pages/discoverpage.ts:105
+
+      103 |
+      104 |     public async verifyTheNumberOfMoviesReturned(numberOfReturn: number) {
+    > 105 |         await expect(this.page.locator(this.div_resultSection)).toHaveCount(numberOfReturn);
+          |                                                                 ^
+      106 |     }
+      107 |
+      108 |     public async verifyTheNameOfMoviesReturned(nameOfMovies: string) {
+        at DiscoverPage.verifyTheNumberOfMoviesReturned (/Users/huynh.hoan/interview-project/tests/pages/discoverpage.ts:105:65)
+        at /Users/huynh.hoan/interview-project/tests/scripts/discover.spec.ts:99:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/scripts-discover-Verify-th-adb49-rify-the-pagination-feature-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/scripts-discover-Verify-th-adb49-rify-the-pagination-feature-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/scripts-discover-Verify-th-adb49-rify-the-pagination-feature-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[[INFO][03-18-2026 12:06:07]: 	pagination :Next
+[INFO][03-18-2026 12:06:08]: 	pagination :Previous
+[INFO][03-18-2026 12:06:08]: 	pagination :undefined
+
+[[ATTACHMENT|test-results/scripts-discover-Verify-th-adb49-rify-the-pagination-feature-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/scripts-discover-Verify-th-adb49-rify-the-pagination-feature-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/scripts-discover-Verify-th-adb49-rify-the-pagination-feature-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Verify the Discover feature › Verify that after refreshing the page should see page not found" classname="scripts/discover.spec.ts" time="17.026">
+</testcase>
+<testcase name="Verify the Discover feature › Verify that after redirecting the page directly by URL should see page not found" classname="scripts/discover.spec.ts" time="7.478">
+</testcase>
+<testcase name="Verify the Discover feature › Verify that user should see the No Results found message when searching with invalid data" classname="scripts/discover.spec.ts" time="7.949">
+<system-out>
+<![CDATA[[INFO][03-18-2026 12:06:06]: 	searching movie name:27834@#$34 test TEST
+]]>
+</system-out>
+</testcase>
+<testcase name="Verify the Discover feature › Verify that FE send correct data on their API based on selected filters and its data reponse returned correctly" classname="scripts/discover.spec.ts" time="11.12">
 <failure message="discover.spec.ts:121:9 Verify that FE send correct data on their API based on selected filters and its data reponse returned correctly" type="FAILURE">
 <![CDATA[  [chromium] › scripts/discover.spec.ts:121:9 › Verify the Discover feature › Verify that FE send correct data on their API based on selected filters and its data reponse returned correctly 
 
@@ -9,17 +164,17 @@
     Expected: "2025-12-31"
     Received: "2026-12-31"
 
-       at pages/discoverpage.ts:131
+       at pages/discoverpage.ts:133
 
-      129 |         expect.soft(url.searchParams.get("sort_by")).toEqual(params.sort_by);
-      130 |         expect.soft(url.searchParams.get("release_date.gte")).toEqual(params['release_date.gte']);
-    > 131 |         expect.soft(url.searchParams.get("release_date.lte")).toEqual(params['release_date.lte']);
+      131 |         expect.soft(url.searchParams.get("sort_by")).toEqual(params.sort_by);
+      132 |         expect.soft(url.searchParams.get("release_date.gte")).toEqual(params['release_date.gte']);
+    > 133 |         expect.soft(url.searchParams.get("release_date.lte")).toEqual(params['release_date.lte']);
           |                                                               ^
-      132 |         expect.soft(url.searchParams.get("vote_average.gte")).toEqual(params['vote_average.gte']);
-      133 |         expect.soft(url.searchParams.get("vote_average.lte")).toEqual(params['vote_average.lte']);
-      134 |         expect.soft(url.searchParams.get("page")).toEqual(params.page);
-        at DiscoverPage.verifyTheParams (/Users/huynh.hoan/interview-project/tests/pages/discoverpage.ts:131:63)
-        at /Users/huynh.hoan/interview-project/tests/scripts/discover.spec.ts:171:28
+      134 |         expect.soft(url.searchParams.get("vote_average.gte")).toEqual(params['vote_average.gte']);
+      135 |         expect.soft(url.searchParams.get("vote_average.lte")).toEqual(params['vote_average.lte']);
+      136 |         expect.soft(url.searchParams.get("page")).toEqual(params.page);
+        at DiscoverPage.verifyTheParams (/Users/huynh.hoan/interview-project/tests/pages/discoverpage.ts:133:63)
+        at /Users/huynh.hoan/interview-project/tests/scripts/discover.spec.ts:170:28
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
     ../test-results/scripts-discover-Verify-th-61bac--reponse-returned-correctly-chromium/test-failed-1.png
@@ -30,19 +185,11 @@
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
     Error Context: ../test-results/scripts-discover-Verify-th-61bac--reponse-returned-correctly-chromium/error-context.md
-
-    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
-    ../test-results/scripts-discover-Verify-th-61bac--reponse-returned-correctly-chromium/trace.zip
-    Usage:
-
-        npx playwright show-trace ../test-results/scripts-discover-Verify-th-61bac--reponse-returned-correctly-chromium/trace.zip
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────
 ]]>
 </failure>
 <system-out>
-<![CDATA[[INFO][03-18-2026 11:37:10]: 	selecting category:Popular
-[INFO][03-18-2026 11:37:10]: 	Starting filter movie with the criteria: {
+<![CDATA[[INFO][03-18-2026 12:06:10]: 	selecting category:Popular
+[INFO][03-18-2026 12:06:13]: 	Starting filter movie with the criteria: {
   "category": "Popular",
   "type": "TV Shows",
   "genre": [
@@ -53,7 +200,7 @@
   "yearTo": "2025",
   "rating": 3
 }
-[INFO][03-18-2026 11:37:11]: 	Verifying the below params: {
+[INFO][03-18-2026 12:06:15]: 	Verifying the below params: {
   "sort_by": "popularity.desc",
   "release_date.gte": "2025-01-01",
   "release_date.lte": "2025-12-31",
@@ -63,7 +210,7 @@
   "with_genres": "16,35",
   "api_key": "add494e96808c55b3ee7f940c9d5e5b6"
 }
-[INFO][03-18-2026 11:37:11]: 	Verifying the below response: {
+[INFO][03-18-2026 12:06:15]: 	Verifying the below response: {
   "page": 1,
   "results": [
     {
@@ -526,8 +673,6 @@
 [[ATTACHMENT|test-results/scripts-discover-Verify-th-61bac--reponse-returned-correctly-chromium/video.webm]]
 
 [[ATTACHMENT|test-results/scripts-discover-Verify-th-61bac--reponse-returned-correctly-chromium/error-context.md]]
-
-[[ATTACHMENT|test-results/scripts-discover-Verify-th-61bac--reponse-returned-correctly-chromium/trace.zip]]
 ]]>
 </system-out>
 </testcase>

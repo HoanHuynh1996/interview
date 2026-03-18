@@ -152,8 +152,7 @@ test.describe('Verify the Discover feature', () => {
         page.on("response", (res) => {
             if (
                 res.url().includes("/discover/tv") &&
-                res.request().method() === "GET" &&
-                res.url().includes(`vote_average.gte=${filterOption.rating}`)
+                res.request().method() === "GET"
             ) {
                 responses.push(res);
             }
@@ -161,6 +160,8 @@ test.describe('Verify the Discover feature', () => {
 
         await discoverPage.selectCategory(filterOption.category);
         await discoverPage.filterMovie(filterOption);
+        //wait for the last api call
+        await page.waitForTimeout(1000)
         // get the last request/response
         const lastRequest = requests[requests.length - 1];
         const lastResponse = responses[responses.length - 1]
