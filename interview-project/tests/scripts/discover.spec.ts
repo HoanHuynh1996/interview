@@ -1,6 +1,7 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, Request, Response } from '@playwright/test';
 import logger from '../logger/logger';
 import { DiscoverPage } from '../pages/discoverpage';
+
 
 let discoverPage: DiscoverPage;
 
@@ -94,7 +95,7 @@ test.describe('Verify the Discover feature', () => {
         await discoverPage.verifyTheNumberOfMoviesReturned(filterOption.expect.numberOfReturnMoviesOnTheFirstPage)
         await discoverPage.pagination("Previous");
         await discoverPage.verifyTheNumberOfMoviesReturned(filterOption.expect.numberOfReturnMoviesOnTheFirstPage)
-        await discoverPage.pagination("55705");
+        await discoverPage.pagination();
         await discoverPage.verifyTheNumberOfMoviesReturned(filterOption.expect.numberOfReturnMoviesOnTheFirstPage)
     });
 
@@ -117,8 +118,58 @@ test.describe('Verify the Discover feature', () => {
         await discoverPage.verifyTheNoResultsFoundPage(testData.message)
     });
 
-    test('Verify that FE send correct data on their API based on selected filters ', async ({ page }) => {
-        
+    test('Verify that FE send correct data on their API based on selected filters and its data reponse returned correctly', async ({ page }) => {
+        const filterOption = {
+            category: "Popular",
+            type: "TV Shows",
+            genre: ["Animation", "Comedy"],
+            yearFrom: "2025",
+            yearTo: "2025",
+            rating: 3
+        };
+        const expectedParams = {
+            sort_by: "popularity.desc",
+            "release_date.gte": "2025-01-01",
+            "release_date.lte": "2025-12-31",
+            "vote_average.gte": "3",
+            "vote_average.lte": "5",
+            page: "1",
+            with_genres: "16,35",//16 means Animation, 35 means Comedy
+            api_key: "add494e96808c55b3ee7f940c9d5e5b6"
+        };
+
+        const requests: Request[] = [];
+        const responses: Response[] = [];
+
+        page.on("request", (req) => {
+            if (
+                req.url().includes("/discover/tv") &&
+                req.method() === "GET"
+            ) {
+                requests.push(req);
+            }
+        });
+        page.on("response", (res) => {
+            if (
+                res.url().includes("/discover/tv") &&
+                res.request().method() === "GET" &&
+                res.url().includes(`vote_average.gte=${filterOption.rating}`)
+            ) {
+                responses.push(res);
+            }
+        });
+
+        await discoverPage.selectCategory(filterOption.category);
+        await discoverPage.filterMovie(filterOption);
+        //wait for the last api call to be catched
+        await page.waitForTimeout(1000)
+        // get the last request/response
+        const lastRequest = requests[requests.length - 1];
+        const lastResponse = responses[responses.length - 1]
+        const url = new URL(lastRequest.url());
+        // assertion
+        await discoverPage.verifyTheParams(url, expectedParams);
+        await discoverPage.verifyTheResponseForPopularAPI(lastResponse, expectedParams);
     });
 });
 

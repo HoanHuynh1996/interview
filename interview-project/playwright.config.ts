@@ -61,10 +61,10 @@ export default defineConfig({
       },
     },
 
-    {
-      name: 'iPhone 12',
-      use: { ...devices['iPhone 12'] },
-    },
+    // {
+    //   name: 'iPhone 12',
+    //   use: { ...devices['iPhone 12'] },
+    // },
 
     // {
     //   name: 'webkit',
