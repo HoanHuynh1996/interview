@@ -1,7 +1,7 @@
 ## 1.How to run the test/report by your self -> run below command:
--> You need to install Node.js first
--> run this cmd to install dependencies: npm install i
--> run these commands below to get results:
+- You need to install Node.js first
+- run this cmd to install dependencies: npm install i
+- run these commands below to get results:
 run test: npx playwright test
 run report: npx playwright show-report
 ## 2.An approach on how you would proceed with this suite integration on CI
