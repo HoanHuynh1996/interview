@@ -1,6 +1,7 @@
 ## 1.How to run the test/report by your self -> run below command:
 - You need to install Node.js first
-- run this cmd to install dependencies: npm install i
+- download the necessary browser binaries (Chromium, Firefox, and WebKit) for Playwright to run tests: npx playwright install
+- run this cmd to install external dependencies: npm install i
 - run these commands below to get results:
 + run test: npx playwright test
 + run report: npx playwright show-report
