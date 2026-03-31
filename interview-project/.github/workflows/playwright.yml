@@ -1,27 +1,84 @@
 name: Playwright Tests
+
 on:
   push:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+
 jobs:
+
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        shardIndex: [1, 2, 3, 4]
+        shardTotal: [4]
+
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-    - name: Install dependencies
-      run: npm ci
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: npx playwright test
-    - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      # create blob report for merging
+      - name: Run Playwright tests
+        run: |
+          npx playwright test \
+          --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }} \
+          --workers=2 \
+          --reporter=blob
+
+      # upload blob report
+      - uses: actions/upload-artifact@v4
+        with:
+          name: blob-report-${{ matrix.shardIndex }}
+          path: blob-report
+          retention-days: 30
+
+
+  merge-report:
+
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install dependencies
+        run: npm ci
+
+      # download all shard reports
+      - uses: actions/download-artifact@v4
+        with:
+          path: all-blob-reports
+
+      # merge into single HTML report
+      - name: Merge reports
+        run: |
+          npx playwright merge-reports \
+          --reporter html \
+          ./all-blob-reports
+
+      # upload final HTML report
+      - uses: actions/upload-artifact@v4
+        with:
+          name: playwright-html-report
+          path: playwright-report
+          retention-days: 30
