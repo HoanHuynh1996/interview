@@ -44,8 +44,8 @@ jobs:
           name: blob-report-${{ matrix.shardIndex }}
           path: blob-report
           retention-days: 30
-
   merge-report:
+    if: always()
     needs: test
     runs-on: ubuntu-latest
 
@@ -59,22 +59,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # download all shard reports
       - uses: actions/download-artifact@v4
         with:
           path: all-blob-reports
 
-      # merge into single HTML report
       - name: Merge reports
-        if: always() # run even if previous job fails
         run: |
           npx playwright merge-reports \
           --reporter html \
           ./all-blob-reports
 
-      # upload final HTML report
       - uses: actions/upload-artifact@v4
         with:
           name: playwright-html-report
           path: playwright-report
           retention-days: 30
+    
