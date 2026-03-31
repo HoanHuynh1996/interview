@@ -115,7 +115,7 @@ test.describe('Verify the Discover feature', () => {
             message: "No results found."
         }
         await discoverPage.searchMovie(testData.search);
-        await discoverPage.verifyTheNoResultsFoundPage(testData.message)
+        await discoverPage.verifyTheNoResultsFoundAppear(testData.message)
     });
 
     test('Verify that FE send correct data on their API based on selected filters and its data reponse returned correctly', async ({ page }) => {

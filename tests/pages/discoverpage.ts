@@ -109,7 +109,7 @@ export class DiscoverPage {
         await expect(this.page.locator(this.p_movieName)).toHaveText(nameOfMovies);
     }
 
-    public async verifyTheNoResultsFoundPage(message: string) {
+    public async verifyTheNoResultsFoundAppear(message: string) {
         await expect(this.page.locator(this.div_NoResultsFound)).toHaveText(message);
     }
 
