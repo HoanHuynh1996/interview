@@ -1,5 +1,5 @@
-<testsuites id="" name="" tests="10" failures="2" skipped="0" errors="0" time="32.915592000000004">
-<testsuite name="scripts/discover.spec.ts" timestamp="2026-03-18T05:05:45.894Z" hostname="chromium" tests="10" failures="2" skipped="0" time="131.947" errors="0">
+<testsuites id="" name="" tests="10" failures="2" skipped="0" errors="0" time="87.293822">
+<testsuite name="scripts/discover.spec.ts" timestamp="2026-03-31T08:33:12.419Z" hostname="chromium" tests="10" failures="2" skipped="0" time="84.176" errors="0">
 <testcase name="Verify the Discover feature › Verify the filtering feature: {
   &quot;type&quot;: &quot;TV Shows&quot;,
   &quot;genre&quot;: [
@@ -12,9 +12,9 @@
   &quot;expect&quot;: {
     &quot;numberOfReturnMoviesOnTheFirstPage&quot;: 20
   }
-}" classname="scripts/discover.spec.ts" time="17.11">
+}" classname="scripts/discover.spec.ts" time="8.982">
 <system-out>
-<![CDATA[[INFO][03-18-2026 12:06:01]: 	Starting filter movie with the criteria: {
+<![CDATA[[INFO][03-31-2026 15:33:20]: 	Starting filter movie with the criteria: {
   "type": "TV Shows",
   "genre": [
     "Comedy",
@@ -41,9 +41,9 @@
   &quot;expect&quot;: {
     &quot;numberOfReturnMoviesOnTheFirstPage&quot;: 20
   }
-}" classname="scripts/discover.spec.ts" time="15.209">
+}" classname="scripts/discover.spec.ts" time="8.276">
 <system-out>
-<![CDATA[[INFO][03-18-2026 12:05:58]: 	Starting filter movie with the criteria: {
+<![CDATA[[INFO][03-31-2026 15:33:28]: 	Starting filter movie with the criteria: {
   "type": "Movie",
   "genre": [
     "Crime"
@@ -58,23 +58,23 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Verify the Discover feature › Verify the category feature" classname="scripts/discover.spec.ts" time="14.23">
+<testcase name="Verify the Discover feature › Verify the category feature" classname="scripts/discover.spec.ts" time="7.548">
 <system-out>
-<![CDATA[[INFO][03-18-2026 12:05:58]: 	selecting category:Trend
+<![CDATA[[INFO][03-31-2026 15:33:36]: 	selecting category:Trend
 ]]>
 </system-out>
 </testcase>
-<testcase name="Verify the Discover feature › Verify the search feature" classname="scripts/discover.spec.ts" time="13.228">
+<testcase name="Verify the Discover feature › Verify the search feature" classname="scripts/discover.spec.ts" time="6.239">
 <system-out>
-<![CDATA[[INFO][03-18-2026 12:05:58]: 	searching movie name:The Great Texas Dynamite Chase
+<![CDATA[[INFO][03-31-2026 15:33:42]: 	searching movie name:The Great Texas Dynamite Chase
 ]]>
 </system-out>
 </testcase>
-<testcase name="Verify the Discover feature › Verify the combination of category, search, filter feature" classname="scripts/discover.spec.ts" time="15.625">
+<testcase name="Verify the Discover feature › Verify the combination of category, search, filter feature" classname="scripts/discover.spec.ts" time="18.69">
 <system-out>
-<![CDATA[[INFO][03-18-2026 12:05:57]: 	selecting category:Trend
-[INFO][03-18-2026 12:06:00]: 	searching movie name:Uncle Grandpa
-[INFO][03-18-2026 12:06:00]: 	Starting filter movie with the criteria: {
+<![CDATA[[INFO][03-31-2026 15:33:58]: 	selecting category:Trend
+[INFO][03-31-2026 15:34:01]: 	searching movie name:Uncle Grandpa
+[INFO][03-31-2026 15:34:01]: 	Starting filter movie with the criteria: {
   "type": "TV Shows",
   "genre": [
     "Comedy"
@@ -91,7 +91,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Verify the Discover feature › Verify the pagination feature" classname="scripts/discover.spec.ts" time="12.972">
+<testcase name="Verify the Discover feature › Verify the pagination feature" classname="scripts/discover.spec.ts" time="11.621">
 <failure message="discover.spec.ts:88:9 Verify the pagination feature" type="FAILURE">
 <![CDATA[  [chromium] › scripts/discover.spec.ts:88:9 › Verify the Discover feature › Verify the pagination feature 
 
@@ -118,8 +118,8 @@
       106 |     }
       107 |
       108 |     public async verifyTheNameOfMoviesReturned(nameOfMovies: string) {
-        at DiscoverPage.verifyTheNumberOfMoviesReturned (/Users/huynh.hoan/interview-project/tests/pages/discoverpage.ts:105:65)
-        at /Users/huynh.hoan/interview-project/tests/scripts/discover.spec.ts:99:28
+        at DiscoverPage.verifyTheNumberOfMoviesReturned (/Users/huynh.hoan/interview/tests/pages/discoverpage.ts:105:65)
+        at /Users/huynh.hoan/interview/tests/scripts/discover.spec.ts:99:28
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
     ../test-results/scripts-discover-Verify-th-adb49-rify-the-pagination-feature-chromium/test-failed-1.png
@@ -133,9 +133,9 @@
 ]]>
 </failure>
 <system-out>
-<![CDATA[[INFO][03-18-2026 12:06:07]: 	pagination :Next
-[INFO][03-18-2026 12:06:08]: 	pagination :Previous
-[INFO][03-18-2026 12:06:08]: 	pagination :undefined
+<![CDATA[[INFO][03-31-2026 15:34:09]: 	pagination :Next
+[INFO][03-31-2026 15:34:09]: 	pagination :Previous
+[INFO][03-31-2026 15:34:09]: 	pagination :undefined
 
 [[ATTACHMENT|test-results/scripts-discover-Verify-th-adb49-rify-the-pagination-feature-chromium/test-failed-1.png]]
 
@@ -145,17 +145,17 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Verify the Discover feature › Verify that after refreshing the page should see page not found" classname="scripts/discover.spec.ts" time="17.026">
+<testcase name="Verify the Discover feature › Verify that after refreshing the page should see page not found" classname="scripts/discover.spec.ts" time="1.794">
 </testcase>
-<testcase name="Verify the Discover feature › Verify that after redirecting the page directly by URL should see page not found" classname="scripts/discover.spec.ts" time="7.478">
+<testcase name="Verify the Discover feature › Verify that after redirecting the page directly by URL should see page not found" classname="scripts/discover.spec.ts" time="7.128">
 </testcase>
-<testcase name="Verify the Discover feature › Verify that user should see the No Results found message when searching with invalid data" classname="scripts/discover.spec.ts" time="7.949">
+<testcase name="Verify the Discover feature › Verify that user should see the No Results found message when searching with invalid data" classname="scripts/discover.spec.ts" time="8.037">
 <system-out>
-<![CDATA[[INFO][03-18-2026 12:06:06]: 	searching movie name:27834@#$34 test TEST
+<![CDATA[[INFO][03-31-2026 15:34:31]: 	searching movie name:27834@#$34 test TEST
 ]]>
 </system-out>
 </testcase>
-<testcase name="Verify the Discover feature › Verify that FE send correct data on their API based on selected filters and its data reponse returned correctly" classname="scripts/discover.spec.ts" time="11.12">
+<testcase name="Verify the Discover feature › Verify that FE send correct data on their API based on selected filters and its data reponse returned correctly" classname="scripts/discover.spec.ts" time="5.861">
 <failure message="discover.spec.ts:121:9 Verify that FE send correct data on their API based on selected filters and its data reponse returned correctly" type="FAILURE">
 <![CDATA[  [chromium] › scripts/discover.spec.ts:121:9 › Verify the Discover feature › Verify that FE send correct data on their API based on selected filters and its data reponse returned correctly 
 
@@ -173,8 +173,8 @@
       134 |         expect.soft(url.searchParams.get("vote_average.gte")).toEqual(params['vote_average.gte']);
       135 |         expect.soft(url.searchParams.get("vote_average.lte")).toEqual(params['vote_average.lte']);
       136 |         expect.soft(url.searchParams.get("page")).toEqual(params.page);
-        at DiscoverPage.verifyTheParams (/Users/huynh.hoan/interview-project/tests/pages/discoverpage.ts:133:63)
-        at /Users/huynh.hoan/interview-project/tests/scripts/discover.spec.ts:170:28
+        at DiscoverPage.verifyTheParams (/Users/huynh.hoan/interview/tests/pages/discoverpage.ts:133:63)
+        at /Users/huynh.hoan/interview/tests/scripts/discover.spec.ts:170:28
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
     ../test-results/scripts-discover-Verify-th-61bac--reponse-returned-correctly-chromium/test-failed-1.png
@@ -188,8 +188,8 @@
 ]]>
 </failure>
 <system-out>
-<![CDATA[[INFO][03-18-2026 12:06:10]: 	selecting category:Popular
-[INFO][03-18-2026 12:06:13]: 	Starting filter movie with the criteria: {
+<![CDATA[[INFO][03-31-2026 15:34:35]: 	selecting category:Popular
+[INFO][03-31-2026 15:34:37]: 	Starting filter movie with the criteria: {
   "category": "Popular",
   "type": "TV Shows",
   "genre": [
@@ -200,7 +200,7 @@
   "yearTo": "2025",
   "rating": 3
 }
-[INFO][03-18-2026 12:06:15]: 	Verifying the below params: {
+[INFO][03-31-2026 15:34:39]: 	Verifying the below params: {
   "sort_by": "popularity.desc",
   "release_date.gte": "2025-01-01",
   "release_date.lte": "2025-12-31",
@@ -210,30 +210,9 @@
   "with_genres": "16,35",
   "api_key": "add494e96808c55b3ee7f940c9d5e5b6"
 }
-[INFO][03-18-2026 12:06:15]: 	Verifying the below response: {
+[INFO][03-31-2026 15:34:39]: 	Verifying the below response: {
   "page": 1,
   "results": [
-    {
-      "adult": false,
-      "backdrop_path": "/tVsrQ1nu3k0Y5H999bcpTCnf9LT.jpg",
-      "genre_ids": [
-        16,
-        35
-      ],
-      "id": 46938,
-      "origin_country": [
-        "RU"
-      ],
-      "original_language": "ru",
-      "original_name": "Лунтик и его друзья",
-      "overview": "\"The Adventures of Luntik\" or simply \"Luntik\" is a Russian animated series for children of preschool age. It is the story of a small fluffy creature, Luntik, who was born on the Moon and fell from it, on to the Earth. Luntik is the main character and each episode features a story about him and his friends. Luntik is new to the Earth and in each episode he learns something about this new world. He meets new friends, learns how to be polite and even gets a family. The majority of the characters in the series are small animals: insects, fish, frogs, bees, grasshoppers, ladybugs etc. The show features both adult and children characters. The series are shown from the child's perspective and the stories are very kind and warm. Even the \"villains\" of the series - two caterpillars - are just a couple of mischievous kids. Each episode is only 6 minutes long and has a finished story line.",
-      "popularity": 30.1434,
-      "poster_path": "/ikDr9Ua8dglQczEDqzNvnOVyIBL.jpg",
-      "first_air_date": "2006-09-01",
-      "name": "Moonzy",
-      "vote_average": 4.5,
-      "vote_count": 13
-    },
     {
       "adult": false,
       "backdrop_path": "/cyH8Ni1OSMtBbloEmI9eE69Xi7j.jpg",
@@ -250,33 +229,12 @@
       "original_language": "en",
       "original_name": "Uncle Grandpa",
       "overview": "The adventures of Uncle Grandpa who is out to help every child and adult in the world through the power of imagination. With his mystical R.V. and eternal optimism, Uncle Grandpa is always ready to greet the day - and everyone he meets - with his signature, \"Good Mornin'.\"",
-      "popularity": 28.4761,
+      "popularity": 32.1295,
       "poster_path": "/zLVOgigPMsd2hkwmcY5AqNhqgcn.jpg",
       "first_air_date": "2013-09-02",
       "name": "Uncle Grandpa",
-      "vote_average": 4.5,
-      "vote_count": 113
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/qF1KzXiGJ4gX3ICgd0WKJk7EMY.jpg",
-      "genre_ids": [
-        16,
-        35
-      ],
-      "id": 44663,
-      "origin_country": [
-        "JP"
-      ],
-      "original_language": "ja",
-      "original_name": "いなかっぺ大将",
-      "overview": "",
-      "popularity": 19.6867,
-      "poster_path": "/9ZUvy3OKCPpS7EJNtKUIPMRcGFq.jpg",
-      "first_air_date": "1970-10-04",
-      "name": "General Inakappe",
-      "vote_average": 3.5,
-      "vote_count": 2
+      "vote_average": 4.478,
+      "vote_count": 114
     },
     {
       "adult": false,
@@ -296,7 +254,7 @@
       "original_language": "ja",
       "original_name": "わんだふるぷりきゅあ！",
       "overview": "In Animal Town where humans and animals live together, Iroha who loves animals is very close to her dog Komugi! One day, a mysterious creature called a GaruGaru goes berserk in her city. In order to protect Iroha, Komugi transforms into a human and even a Pretty Cure…!? We have to protect such berserk animals! Let's join forces and return the animals to the Niko Garden!",
-      "popularity": 19.1116,
+      "popularity": 17.3105,
       "poster_path": "/2PhiNPB0UyqBu9pHm0cluD0Sh3W.jpg",
       "first_air_date": "2024-02-04",
       "name": "Wonderful Precure!",
@@ -305,24 +263,113 @@
     },
     {
       "adult": false,
-      "backdrop_path": "/dGjFqV1QfXSP9P5qe6UATnD6ss0.jpg",
+      "backdrop_path": "/dlOkqakV9AKFFUS6Sxn64VS5ffp.jpg",
+      "genre_ids": [
+        16,
+        35,
+        80,
+        9648
+      ],
+      "id": 126725,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Velma",
+      "overview": "Jinkies! This raucous reimagining of the Scooby-Doo franchise unravels the mysterious origins of Mystery, Inc. – as seen through the eyes of the gang’s beloved bespectacled detective Velma.",
+      "popularity": 12.853,
+      "poster_path": "/zxkNhuPSHeDv3yA7sFu2RuEOGgR.jpg",
+      "first_air_date": "2023-01-12",
+      "name": "Velma",
+      "vote_average": 3.41,
+      "vote_count": 332
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/hqYwmjCnzXwLlEk0O2psygJQYsi.jpg",
       "genre_ids": [
         16,
         35
       ],
-      "id": 42565,
+      "id": 279120,
       "origin_country": [
         "JP"
       ],
       "original_language": "ja",
-      "original_name": "天使な小生意気",
-      "overview": "Cheeky Angel is a comedy romance action manga series by Hiroyuki Nishimori. The story revolves around the adventures of 15-year-old schoolgirl Megumi Amatsuka, a popular and beautiful tomboy that always get into fights with a secret: she used to be a boy. Originally a serial in Shōnen Sunday, it has been collected in 20 tankōbon volumes and adapted as a 50-episode anime series. In 2001, the manga won the Shogakukan Manga Award for shōnen.",
-      "popularity": 17.6845,
-      "poster_path": "/hKRwRjnfwe9vC6IsRQ36LaJAo02.jpg",
-      "first_air_date": "2002-04-07",
-      "name": "Cheeky Angel",
-      "vote_average": 3.5,
-      "vote_count": 4
+      "original_name": "「１分間だけ触れてもいいよ…」シェアハウスの秘密ルール。",
+      "overview": "After entering university, Ryota moves into a share house where he meets two stunningly beautiful sharemates, Momoka and Kanade. As the three of them begin to cohabitate together, they agree on one \"secret rule.\" \"If it's just for a minute, you can touch whatever you want.\" Thus begins Ryota's new life at the share house, where sweet temptation lies behind every door...!",
+      "popularity": 14.1802,
+      "poster_path": "/chmCJiUJqhOpBKfJi88Rw2iB8IT.jpg",
+      "first_air_date": "2025-01-06",
+      "name": "The Share House's Secret Rule",
+      "vote_average": 4,
+      "vote_count": 1
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/7SJctp269UEMvRGt9d3eddSpcLL.jpg",
+      "genre_ids": [
+        16,
+        10762,
+        10759,
+        35
+      ],
+      "id": 202998,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Star Wars: Young Jedi Adventures",
+      "overview": "Set during the High Republic era and the prime of the Jedi Order, follow Jedi younglings as they study the ways of the Force, explore the galaxy, help citizens and creatures in need, and learn valuable skills needed to become Jedi along the way.",
+      "popularity": 15.3824,
+      "poster_path": "/bC2Mix1WPUiY6pldh77oiFl1MvI.jpg",
+      "first_air_date": "2023-05-04",
+      "name": "Star Wars: Young Jedi Adventures",
+      "vote_average": 4.6,
+      "vote_count": 32
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/5oWxlHVfhStOtX4VZJ2b552JYTp.jpg",
+      "genre_ids": [
+        35,
+        16
+      ],
+      "id": 71012,
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "original_name": "アイドルマスター シンデレラガールズ劇場",
+      "overview": "",
+      "popularity": 10.8787,
+      "poster_path": "/3OueDlWvmzhWa7BRxC2bLuwkFqc.jpg",
+      "first_air_date": "2017-04-04",
+      "name": "Cinderella Girls Theatre",
+      "vote_average": 4.6,
+      "vote_count": 8
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/gZwfx7zDthxboj4rk2hIToobnHF.jpg",
+      "genre_ids": [
+        16,
+        35,
+        10759
+      ],
+      "id": 236000,
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "original_name": "キン肉マン 完璧超人始祖編",
+      "overview": "Kinnikuman returns to the ring in an epic three-way battle between the Seigi, Akuma and Perfect Chojin factions and reveals the roots of the Chojin.",
+      "popularity": 10.8205,
+      "poster_path": "/tkhMzWi33pPpyxJDwAs3xiqLiGA.jpg",
+      "first_air_date": "2024-07-14",
+      "name": "Kinnikuman Perfect Origin Arc",
+      "vote_average": 5,
+      "vote_count": 8
     },
     {
       "adult": false,
@@ -341,7 +388,7 @@
       "original_language": "en",
       "original_name": "Breadwinners",
       "overview": "Two ducks fly around in a rocket-powered van, delivering bread to other ducks in Pondgea.",
-      "popularity": 15.3262,
+      "popularity": 9.5747,
       "poster_path": "/eOWAf4jeNPQX2JLMdJ3T1ad1kqR.jpg",
       "first_air_date": "2014-02-17",
       "name": "Breadwinners",
@@ -350,184 +397,49 @@
     },
     {
       "adult": false,
-      "backdrop_path": "/7SJctp269UEMvRGt9d3eddSpcLL.jpg",
-      "genre_ids": [
-        16,
-        10762,
-        10759,
-        35
-      ],
-      "id": 202998,
-      "origin_country": [
-        "US"
-      ],
-      "original_language": "en",
-      "original_name": "Star Wars: Young Jedi Adventures",
-      "overview": "Set during the High Republic era and the prime of the Jedi Order, follow Jedi younglings as they study the ways of the Force, explore the galaxy, help citizens and creatures in need, and learn valuable skills needed to become Jedi along the way.",
-      "popularity": 15.5213,
-      "poster_path": "/bC2Mix1WPUiY6pldh77oiFl1MvI.jpg",
-      "first_air_date": "2023-05-04",
-      "name": "Star Wars: Young Jedi Adventures",
-      "vote_average": 4.6,
-      "vote_count": 32
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/gZwfx7zDthxboj4rk2hIToobnHF.jpg",
-      "genre_ids": [
-        16,
-        35,
-        10759
-      ],
-      "id": 236000,
-      "origin_country": [
-        "JP"
-      ],
-      "original_language": "ja",
-      "original_name": "キン肉マン 完璧超人始祖編",
-      "overview": "Kinnikuman returns to the ring in an epic three-way battle between the Seigi, Akuma and Perfect Chojin factions and reveals the roots of the Chojin.",
-      "popularity": 13.8839,
-      "poster_path": "/tkhMzWi33pPpyxJDwAs3xiqLiGA.jpg",
-      "first_air_date": "2024-07-14",
-      "name": "Kinnikuman Perfect Origin Arc",
-      "vote_average": 5,
-      "vote_count": 8
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/h8TPjQM9r6PYgZ2GnkgLKW7eb75.jpg",
+      "backdrop_path": "/dBB79nqLmdSBR3u3DKwXMmmTiqI.jpg",
       "genre_ids": [
         16,
         10759,
-        35
-      ],
-      "id": 92989,
-      "origin_country": [
-        "JP"
-      ],
-      "original_language": "ja",
-      "original_name": "さすがの猿飛",
-      "overview": "Nikumaru, meaning meatball in Japanese, is a seventeen-year-old student at Ninja High School, a special school for the training of ninja. He is short and chubby, but he possesses a super technique known as the \"kamikaze\", where he stirs up a whirlwind with his feet. The series introduces his many adventures and pranks as Nikumaru meets with his rivals both in and out of school.",
-      "popularity": 15.4058,
-      "poster_path": "/uwDPBq1e1oHUDFILcfwOMWDB8um.jpg",
-      "first_air_date": "1982-10-17",
-      "name": "Amazing Sarutobi",
-      "vote_average": 4.7,
-      "vote_count": 3
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/dlOkqakV9AKFFUS6Sxn64VS5ffp.jpg",
-      "genre_ids": [
-        16,
         35,
+        10765,
         80,
         9648
       ],
-      "id": 126725,
-      "origin_country": [
-        "US"
-      ],
-      "original_language": "en",
-      "original_name": "Velma",
-      "overview": "Jinkies! This raucous reimagining of the Scooby-Doo franchise unravels the mysterious origins of Mystery, Inc. – as seen through the eyes of the gang’s beloved bespectacled detective Velma.",
-      "popularity": 13.8855,
-      "poster_path": "/zxkNhuPSHeDv3yA7sFu2RuEOGgR.jpg",
-      "first_air_date": "2023-01-12",
-      "name": "Velma",
-      "vote_average": 3.4,
-      "vote_count": 329
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/f2PzX6WjS3e9wTizrNBHwBodmvn.jpg",
-      "genre_ids": [
-        10751,
-        16,
-        35,
-        10762
-      ],
-      "id": 74916,
-      "origin_country": [
-        "US",
-        "GB"
-      ],
-      "original_language": "en",
-      "original_name": "Wacky Races",
-      "overview": "Wacky Races (2017) is a reboot of the classic 1968 Hanna-Barbera animated series, bringing a fresh, modern take on the original premise while retaining much of the core essence that made the original show so beloved. The 2017 version, created by Warner Bros. Animation, aired on the Boomerang network and introduced a new generation to the zany, high-speed races of the characters.\n\nIn this updated series, the characters from the original Wacky Races return, but with a more contemporary style and new backstories. The vehicles are also revamped with more advanced technology and a few new additions to the roster, though the classic ones like Dick Dastardly’s Mean Machine and Penelope Pitstop’s Compact Pussycat are still present.",
-      "popularity": 15.5099,
-      "poster_path": "/rgmUxN8vPB4WvvWKEhEpWs8SR9D.jpg",
-      "first_air_date": "2017-08-14",
-      "name": "Wacky Races",
-      "vote_average": 4.6,
-      "vote_count": 11
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/5oWxlHVfhStOtX4VZJ2b552JYTp.jpg",
-      "genre_ids": [
-        35,
-        16
-      ],
-      "id": 71012,
+      "id": 91027,
       "origin_country": [
         "JP"
       ],
       "original_language": "ja",
-      "original_name": "アイドルマスター シンデレラガールズ劇場",
+      "original_name": "戦×恋",
+      "overview": "High schooler Takuma Akutsu has learned to accept his lonely lot in life and is content surrounded by his studies, but when the god Odin taps him to save the world alongside nine Valkyries fueled by intimacy, Takuma can say good-bye to his solitary existence.",
+      "popularity": 10.4957,
+      "poster_path": "/6TIEhcHYK8fLmgDKxrLE6tieEQQ.jpg",
+      "first_air_date": "2019-10-05",
+      "name": "Val x Love",
+      "vote_average": 4.5,
+      "vote_count": 17
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/f0hSbsZ1oJTtOLtOr4bwp0iGRQu.jpg",
+      "genre_ids": [
+        16,
+        35
+      ],
+      "id": 24304,
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "original_name": "ディア・ボーイズ",
       "overview": "",
-      "popularity": 17.1409,
-      "poster_path": "/3OueDlWvmzhWa7BRxC2bLuwkFqc.jpg",
-      "first_air_date": "2017-04-04",
-      "name": "Cinderella Girls Theatre",
-      "vote_average": 4.6,
-      "vote_count": 8
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/teSk8sm8o7wZjLZUFSKmc1IVdwh.jpg",
-      "genre_ids": [
-        35,
-        16
-      ],
-      "id": 62853,
-      "origin_country": [
-        "US"
-      ],
-      "original_language": "en",
-      "original_name": "Pickle & Peanut",
-      "overview": "A buddy comedy series about two unlikely friends — an emotional pickle and a freewheeling peanut.",
-      "popularity": 12.6067,
-      "poster_path": "/eifTkh6JbmEaUTbIm2jaKWr18UQ.jpg",
-      "first_air_date": "2015-09-02",
-      "name": "Pickle & Peanut",
-      "vote_average": 4.8,
-      "vote_count": 13
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/e2hh2OEqKG6FegxIuRTYY61hIhA.jpg",
-      "genre_ids": [
-        16,
-        10759,
-        35,
-        80,
-        10762,
-        9648
-      ],
-      "id": 10518,
-      "origin_country": [
-        "US"
-      ],
-      "original_language": "en",
-      "original_name": "Clue Club",
-      "overview": "Clue Club is a 30-minute Saturday morning animated series produced by Hanna-Barbera Productions from August 14, 1976 to September 3, 1977 on CBS.\n\nClue Club only had one season’s worth of first-run episodes produced, which were shown on Saturday mornings on CBS.\n\nIn the fall of 1977, cut-down versions of the half-hour episodes of Clue Club appeared under the new title Woofer & Wimper, Dog Detectives to showcase the show's basset and bloodhound which aired as a segment on the CBS Saturday morning package program The Skatebirds from September 10, 1977 to January 28, 1978.\n\nWhen The Skatebirds was cancelled in early 1978, Woofer & Wimper, Dog Detectives re-appeared as a segment alongside The Robonic Stooges on their half-hour show, also on CBS. The full-length versions of Clue Club returned to CBS on Sunday mornings from September 1978 to September 1979, concluding the show’s original network run.\n\nAfter a mid-1980s revival on USA Cartoon Express, it has since resurfaced on Cartoon Network and Boomerang.",
-      "popularity": 14.4044,
-      "poster_path": "/mvmHo3nvO1JTRyxnTcQQj5ru9Wr.jpg",
-      "first_air_date": "1976-08-14",
-      "name": "Clue Club",
-      "vote_average": 4.8,
-      "vote_count": 5
+      "popularity": 9.4716,
+      "poster_path": "/9hTaPhYyu7eTjEAzoshup4i5m0R.jpg",
+      "first_air_date": "2003-04-07",
+      "name": "Hoop Days",
+      "vote_average": 5,
+      "vote_count": 2
     },
     {
       "adult": false,
@@ -544,7 +456,7 @@
       "original_language": "ja",
       "original_name": "歌舞伎町シャーロック",
       "overview": "Shinjuku Ward, east side… The center of the street with the most chaos, there's Kabuki-chō, full of neon lights. When the light is stronger, the shadow is deeper. The story begins when certain bizarre murder happens one night! Suspense? Or Comedy? Drama that cannot be identified begins!",
-      "popularity": 10.806,
+      "popularity": 10.2942,
       "poster_path": "/a3IN3jazd0GtDjSPuPuf9WTqR56.jpg",
       "first_air_date": "2019-10-10",
       "name": "Case File N° 221: Kabukicho",
@@ -567,101 +479,186 @@
       "original_language": "en",
       "original_name": "Total DramaRama",
       "overview": "Some of the original \"Total Drama\" characters enter into an alternate universe where they are aged down from teenagers to toddlers.",
-      "popularity": 13.8517,
+      "popularity": 9.4401,
       "poster_path": "/A9KAegh5542L8JktkwsZZrdekhe.jpg",
       "first_air_date": "2018-09-01",
       "name": "Total DramaRama",
-      "vote_average": 4.967,
+      "vote_average": 5,
       "vote_count": 30
     },
     {
       "adult": false,
-      "backdrop_path": "/gh16eOVFRX0c2Br9mIr2KnxygFR.jpg",
+      "backdrop_path": "/la8Al5cs0gs2xkgE5WiLKEyOSTX.jpg",
       "genre_ids": [
         16,
-        35,
-        10759,
-        10762
+        10762,
+        35
       ],
-      "id": 18848,
+      "id": 44997,
       "origin_country": [
-        "US"
+        "JP"
       ],
-      "original_language": "en",
-      "original_name": "Planet Sheen",
-      "overview": "Jimmy Neutron's goofy pal, Sheen Estevez accidentally gets himself sent to another planet, millions of light-years from Earth.",
-      "popularity": 10.0622,
-      "poster_path": "/27A7tRW34HFdWLVfbBxcwsDuNc8.jpg",
-      "first_air_date": "2010-10-02",
-      "name": "Planet Sheen",
-      "vote_average": 4.5,
-      "vote_count": 48
+      "original_language": "ja",
+      "original_name": "エスパー魔美",
+      "overview": "Mami Sakura used to be a normal junior high school student, but she happened to acquire supernatural powers. Using her powers and with the help of her childhood friend, Kazuo Takahata, she solves mysterious occurrences.\n\nShe then saves people in trouble with her psychic powers, such as telekinesis and telepathy. When she senses someone needs help, she uses the \"Teleportation Gun\" (a heart-shaped brooch Takahata designs) and transports herself there. Mami's teleportation is only triggered when a projectile is flying toward her, and this locket that shoots out tiny marbles is a portable gadget for teleporting in a controlled way, rather than by chance. Her telekinesis can be precise to a cellular level, which enables her to transport cancerous cells out of one of her father's art critics. Her telepathy allows her to access people's thoughts and dreams.",
+      "popularity": 6.8932,
+      "poster_path": "/eLApJavOyMAK1q1xLaQhnKk5PAA.jpg",
+      "first_air_date": "1987-04-07",
+      "name": "Mami the Psychic",
+      "vote_average": 4.2,
+      "vote_count": 4
     },
     {
       "adult": false,
-      "backdrop_path": "/6JIyeQb8kT4jukobzZ4UjgaVIYu.jpg",
+      "backdrop_path": "/tVsrQ1nu3k0Y5H999bcpTCnf9LT.jpg",
       "genre_ids": [
-        10751,
         16,
         35
       ],
-      "id": 6607,
+      "id": 46938,
       "origin_country": [
-        "US"
+        "RU"
       ],
-      "original_language": "en",
-      "original_name": "Camp Candy",
-      "overview": "Camp Candy is a 1989-1992 animated television series produced by DIC Entertainment, with comedian John Candy providing the voice for an animated version of himself.",
-      "popularity": 9.6447,
-      "poster_path": "/A3i4GRWCvw2PAyu41uokAOvekSt.jpg",
-      "first_air_date": "1989-09-09",
-      "name": "Camp Candy",
+      "original_language": "ru",
+      "original_name": "Лунтик и его друзья",
+      "overview": "\"The Adventures of Luntik\" or simply \"Luntik\" is a Russian animated series for children of preschool age. It is the story of a small fluffy creature, Luntik, who was born on the Moon and fell from it, on to the Earth. Luntik is the main character and each episode features a story about him and his friends. Luntik is new to the Earth and in each episode he learns something about this new world. He meets new friends, learns how to be polite and even gets a family. The majority of the characters in the series are small animals: insects, fish, frogs, bees, grasshoppers, ladybugs etc. The show features both adult and children characters. The series are shown from the child's perspective and the stories are very kind and warm. Even the \"villains\" of the series - two caterpillars - are just a couple of mischievous kids. Each episode is only 6 minutes long and has a finished story line.",
+      "popularity": 8.732,
+      "poster_path": "/ikDr9Ua8dglQczEDqzNvnOVyIBL.jpg",
+      "first_air_date": "2006-09-01",
+      "name": "Moonzy",
+      "vote_average": 4.5,
+      "vote_count": 13
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/pnHSFYcfp25gRaPILbAiXj3X3Dv.jpg",
+      "genre_ids": [
+        16,
+        18,
+        35
+      ],
+      "id": 108478,
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "original_name": "さよなら私のクラマー",
+      "overview": "With no soccer accomplishments to speak of during the entirety of Suou Sumire's junior high school years, the young wing gets an odd offer. Suou's main rival, Soshizaki Midori, invites her to join up on the same team in high school, with a promise that she'll never let Suou \"play alone.\" It's an earnest offer, but the question is whether Suou will take her up on it. Thus the curtain opens on a story that collects an enormous cast of individual soccer-playing personalities!",
+      "popularity": 9.7399,
+      "poster_path": "/iunaQYinM0b7gyfUuqLzhLyMWXb.jpg",
+      "first_air_date": "2021-04-04",
+      "name": "Farewell, My Dear Cramer",
+      "vote_average": 3.9,
+      "vote_count": 8
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/1KsdGhjvY85ua79av0Pj0JPiNPp.jpg",
+      "genre_ids": [
+        16,
+        35
+      ],
+      "id": 254174,
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "original_name": "かくして！ マキナさん!!",
+      "overview": "Eita, a mechanical otaku, discovers that Makina, the school idol he's secretly liked, is actually a robot built for sexual purposes. Now, he must navigate her bold advances while helping her keep her identity hidden in this chaotic romantic comedy.",
+      "popularity": 8.4263,
+      "poster_path": "/viiiAmBVRtTYdOtP4nXlQ3b0xPf.jpg",
+      "first_air_date": "2025-04-07",
+      "name": "Kakushite! Makina-san!!",
+      "vote_average": 4.9,
+      "vote_count": 12
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/uOWHuasTpabR3zenQ3Arw2N4o0a.jpg",
+      "genre_ids": [
+        16,
+        35,
+        10765
+      ],
+      "id": 119631,
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "original_name": "RPG不動産",
+      "overview": "The story begins 15 years after the demon king was defeated and the world has become peaceful. Kotone, who graduated from school and became a magician, inquired the kingdom-affiliated RPG Real Estate in order to find a new home. In reality, RPG Real Estate was Kotone's place of employment, and together with Fa, a demi-human, the priest Rufuria, and the soldier Rakira, they help support the searches of new homes for the customers with various circumstances.",
+      "popularity": 8.373,
+      "poster_path": "/yThvCUigJRtguDcysLS9QIehPyX.jpg",
+      "first_air_date": "2022-04-06",
+      "name": "RPG Real Estate",
+      "vote_average": 4.7,
+      "vote_count": 16
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/qaDvdxDkED127VPqlVxlDv29H8x.jpg",
+      "genre_ids": [
+        16,
+        10762,
+        10759,
+        18,
+        35
+      ],
+      "id": 23451,
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "original_name": "剣勇伝説ＹＡＩＢＡ",
+      "overview": "Kurogane Yaiba is a boy who doesn't want to become what any regular kid would: A samurai. That's why he undergoes a hard training with his father, knowing only the forest as his world. Then, one day, he is sent to Japan, where he has to deal with a whole new civilized reality, meeting the Mine family, the evil Onimaru and even the legendary Musashi, having lots of dangerous adventures, becoming stronger everyday.",
+      "popularity": 6.2282,
+      "poster_path": "/fCLKqBwbqX2MOyV1FIFlWOyuuf9.jpg",
+      "first_air_date": "1993-04-09",
+      "name": "Legendary Brave Swordsman Yaiba",
       "vote_average": 5,
+      "vote_count": 12
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9AIgvFOxJ7YWmks2WsumUc8mHsE.jpg",
+      "genre_ids": [
+        16,
+        35
+      ],
+      "id": 68928,
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "original_name": "レモンエンジェル",
+      "overview": "An idol trio are thrown into various bizarre situations.",
+      "popularity": 7.8399,
+      "poster_path": "/t0PKnYdEL7PFGYxIs33frCqUOrg.jpg",
+      "first_air_date": "1987-10-02",
+      "name": "Lemon Angel",
+      "vote_average": 4.4,
       "vote_count": 5
     },
     {
       "adult": false,
-      "backdrop_path": "/hqYwmjCnzXwLlEk0O2psygJQYsi.jpg",
+      "backdrop_path": "/ymqRWwxW0GZP0sD6NLrTgJbygM9.jpg",
       "genre_ids": [
         16,
         35
       ],
-      "id": 279120,
+      "id": 34080,
       "origin_country": [
         "JP"
       ],
       "original_language": "ja",
-      "original_name": "「１分間だけ触れてもいいよ…」シェアハウスの秘密ルール。",
-      "overview": "After entering university, Ryota moves into a share house where he meets two stunningly beautiful sharemates, Momoka and Kanade. As the three of them begin to cohabitate together, they agree on one \"secret rule.\" \"If it's just for a minute, you can touch whatever you want.\" Thus begins Ryota's new life at the share house, where sweet temptation lies behind every door...!",
-      "popularity": 12.0348,
-      "poster_path": "/chmCJiUJqhOpBKfJi88Rw2iB8IT.jpg",
-      "first_air_date": "2025-01-06",
-      "name": "The Share House's Secret Rule",
+      "original_name": "みどりのマキバオー",
+      "overview": "Midori no Makibaō is a manga series written and illustrated by Tsunomaru and serialized in Weekly Shōnen Jump. It was also adapted into an anime series.",
+      "popularity": 7.8051,
+      "poster_path": "/zXlC1NyX7Dc8PMYTdMRyhVZcjFh.jpg",
+      "first_air_date": "1996-03-09",
+      "name": "Midori no Makibaō",
       "vote_average": 4,
       "vote_count": 1
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/jPlwOnhAHeSLoHyYGGI56Cbca6T.jpg",
-      "genre_ids": [
-        18,
-        16,
-        10765,
-        35
-      ],
-      "id": 42442,
-      "origin_country": [
-        "JP"
-      ],
-      "original_language": "ja",
-      "original_name": "まぶらほ",
-      "overview": "High school student Kazuki Shikimori comes from a line of powerful magicians with extraordinary DNA and he attends the most prestigious school for wizards in all of Japan. It would seem that life is good for Kazuki. Unfortunately, that couldn’t be further from the truth. He’s not the most smooth when it comes to the ladies, his grades are poor, his athletic skill is next to none, and to top it all off, he can only use his magic eight times before he turns into dust! However, three magical hotties have learned of his genetic secret and are all after him! Suddenly he has become the most “popular” kid in class. Are all these girls out to romance him, or are they only after his DNA?",
-      "popularity": 12.7665,
-      "poster_path": "/hDV2FsIjNrKgAXe7GKis1eqKp6Z.jpg",
-      "first_air_date": "2003-10-14",
-      "name": "Maburaho",
-      "vote_average": 4.9,
-      "vote_count": 11
     }
   ],
   "total_pages": 18,
