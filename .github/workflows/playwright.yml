@@ -30,23 +30,26 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      # create blob report for merging
-      - name: Run Playwright tests
+      - name: Run Playwright tests (sharded)
         run: |
           npx playwright test \
           --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }} \
           --workers=2 \
           --reporter=blob
 
-      # upload blob report
-      - uses: actions/upload-artifact@v4
+      # upload blob report (contains screenshot + video)
+      - name: Upload blob report
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: blob-report-${{ matrix.shardIndex }}
           path: blob-report
           retention-days: 30
+
   merge-report:
-    if: always()
+    name: Merge HTML report
     needs: test
+    if: always()
     runs-on: ubuntu-latest
 
     steps:
@@ -54,12 +57,13 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: 20
 
       - name: Install dependencies
         run: npm ci
 
-      - uses: actions/download-artifact@v4
+      - name: Download all blob reports
+        uses: actions/download-artifact@v4
         with:
           path: all-blob-reports
           merge-multiple: true
@@ -70,9 +74,10 @@ jobs:
           --reporter html \
           ./all-blob-reports
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload HTML report
+        uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: playwright-html-report
           path: playwright-report
           retention-days: 30
-    
